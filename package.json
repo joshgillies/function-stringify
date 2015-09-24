@@ -1,0 +1,30 @@
+{
+  "name": "function-stringify",
+  "version": "1.0.0",
+  "description": "stringify functions!",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshgillies/function-stringify.git"
+  },
+  "keywords": [
+    "function",
+    "stringify",
+    "comment",
+    "body",
+    "whynot"
+  ],
+  "author": "Josh Gillies <npm@joshgilli.es> (http://joshgilli.es/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshgillies/function-stringify/issues"
+  },
+  "homepage": "https://github.com/joshgillies/function-stringify#readme",
+  "devDependencies": {
+    "standard": "^5.3.1",
+    "tape": "^4.2.0"
+  }
+}
