@@ -1,7 +1,7 @@
 {
   "name": "function-stringify",
   "version": "1.0.0",
-  "description": "stringify functions!",
+  "description": "Stringify functions, or more specifically their comments!",
   "main": "index.js",
   "scripts": {
     "test": "standard && tape test.js"

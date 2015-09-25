@@ -1,12 +1,15 @@
 # function-stringify
 
-Factory to stringify functions!
+Stringify functions, or more specifically their comments!
 
-Because sometimes you might want a function body to store something more meaningful
-than just JavaScript.
+You know, because you might want a function body to store something other than just JavaScript.
 
 [![Build Status](https://travis-ci.org/joshgillies/function-stringify.svg)](https://travis-ci.org/joshgillies/function-stringify)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
+## Install
+
+`npm install function-stringify`
 
 ## Example
 
