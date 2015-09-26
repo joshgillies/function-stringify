@@ -1,7 +1,12 @@
-module.exports = function fnStringify (fn) {
+module.exports = function fnStringify (fn, format) {
   var comment = /\*([^*]*)\*/.exec(fn.toString())[1]
-  var indent = /([^\n]\s+)/.exec(comment)[1].length
-  return comment.split('\n').map(function (line) {
-    return line.slice(indent)
-  }).join('\n').trim()
+
+  if (format) {
+    var indent = /([^\n]\s+)/.exec(comment)[1].length
+    return comment.split('\n').map(function (line) {
+      return line.slice(indent)
+    }).join('\n').trim()
+  }
+
+  return comment.trim()
 }

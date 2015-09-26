@@ -3,6 +3,16 @@ var fnStringify = require('./')
 
 test('simple test', function (assert) {
   var html = fnStringify(function () {/*
+    Hello, world!
+  */})
+  var expected = 'Hello, world!'
+
+  assert.plan(1)
+  assert.equals(html, expected)
+})
+
+test('simple formatted test', function (assert) {
+  var html = fnStringify(function () {/*
     <!DOCTYPE html>
     <html>
       <head>
@@ -12,7 +22,7 @@ test('simple test', function (assert) {
         <h1>Hello, world!</h1>
       </body>
     </html>
-  */})
+  */}, true)
   var expected = [
     '<!DOCTYPE html>',
     '<html>',
@@ -43,7 +53,7 @@ test('stringify call inline', function (assert) {
       </html>
     */
 
-    return fnStringify(html)
+    return fnStringify(html, true)
   }
   var expected = [
     '<!DOCTYPE html>',
