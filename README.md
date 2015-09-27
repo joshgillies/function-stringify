@@ -31,7 +31,7 @@ var template = fnStringify(function () {/*
 console.log(template)
 ```
 
-## Uasge
+## Usage
 
 ```js
 var fnStringify = require('function-stringify')
