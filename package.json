@@ -1,6 +1,6 @@
 {
   "name": "function-stringify",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Stringify functions, or more specifically their comments!",
   "main": "index.js",
   "scripts": {
