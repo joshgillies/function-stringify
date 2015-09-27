@@ -26,10 +26,22 @@ var template = fnStringify(function () {/*
       <h1>Hello, world!</h1>
     </body>
   </html>
-*/})
+*/}, true)
 
 console.log(template)
 ```
+
+## Uasge
+
+```js
+var fnStringify = require('function-stringify')
+```
+
+### fnStringify(fn, format)
+
+`fn` is a function declaration whose body contains a comment block in the format of `/* content */`.
+
+`format` is a boolean flag which when set to true `fnStringify` will attempt to preserve the formatting of the enclosed content string.
 
 ## License
 
