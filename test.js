@@ -70,3 +70,28 @@ test('stringify call inline', function (assert) {
   assert.plan(1)
   assert.equals(html(), expected)
 })
+
+test('inline asterisk', function (assert) {
+  function html () {/*
+      # Markdown
+      It's good for the following reasons:
+       * You can format things
+      In addition:
+       * test
+      FIN!
+    */
+
+    return fnStringify(html, true)
+  }
+  var expected = [
+    '# Markdown',
+    'It\'s good for the following reasons:',
+    ' * You can format things',
+    'In addition:',
+    ' * test',
+    'FIN!'
+  ].join('\n')
+
+  assert.plan(1)
+  assert.equals(html(), expected)
+})
