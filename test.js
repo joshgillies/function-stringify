@@ -95,3 +95,26 @@ test('inline asterisk', function (assert) {
   assert.plan(1)
   assert.equals(html(), expected)
 })
+
+test('advanced usage', function (assert) {
+  function json () {/*
+      {
+        "data": "test",
+        "things": ["a","b","c"]
+      }
+    */
+
+    try {
+      return JSON.parse(fnStringify(json))
+    } catch (e) {
+      assert.error(e)
+    }
+  }
+  var expected = {
+    data: 'test',
+    things: ['a', 'b', 'c']
+  }
+
+  assert.plan(1)
+  assert.deepEquals(json(), expected)
+})
