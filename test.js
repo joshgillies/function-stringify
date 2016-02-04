@@ -1,29 +1,33 @@
-var test = require('tape')
-var fnStringify = require('./')
+import test from 'tape'
+import fnStringify from './'
 
-test('simple test', function (assert) {
-  var html = fnStringify(function () {/*
-    Hello, world!
-  */})
-  var expected = 'Hello, world!'
+test('simple test', (assert) => {
+  const html = fnStringify(() => {
+    /*
+      Hello, world!
+    */
+  })
+  const expected = 'Hello, world!'
 
-  assert.plan(1)
   assert.equals(html, expected)
+  assert.end()
 })
 
-test('simple formatted test', function (assert) {
-  var html = fnStringify(function () {/*
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Welcome to The Internet</title>
-      </head>
-      <body>
-        <h1>Hello, world!</h1>
-      </body>
-    </html>
-  */}, true)
-  var expected = [
+test('simple formatted test', (assert) => {
+  const html = fnStringify(() => {
+    /*
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Welcome to The Internet</title>
+        </head>
+        <body>
+          <h1>Hello, world!</h1>
+        </body>
+      </html>
+    */
+  }, true)
+  const expected = [
     '<!DOCTYPE html>',
     '<html>',
     '  <head>',
@@ -35,11 +39,11 @@ test('simple formatted test', function (assert) {
     '</html>'
   ].join('\n')
 
-  assert.plan(1)
   assert.equals(html, expected)
+  assert.end()
 })
 
-test('stringify call inline', function (assert) {
+test('stringify call inline', (assert) => {
   function html () {
     /*
       <!DOCTYPE html>
@@ -55,7 +59,7 @@ test('stringify call inline', function (assert) {
 
     return fnStringify(html, true)
   }
-  var expected = [
+  const expected = [
     '<!DOCTYPE html>',
     '<html>',
     '  <head>',
@@ -67,12 +71,13 @@ test('stringify call inline', function (assert) {
     '</html>'
   ].join('\n')
 
-  assert.plan(1)
   assert.equals(html(), expected)
+  assert.end()
 })
 
-test('inline asterisk', function (assert) {
-  function html () {/*
+test('inline asterisk', (assert) => {
+  function html () {
+    /*
       # Markdown
       It's good for the following reasons:
        * You can format things
@@ -83,7 +88,7 @@ test('inline asterisk', function (assert) {
 
     return fnStringify(html, true)
   }
-  var expected = [
+  const expected = [
     '# Markdown',
     'It\'s good for the following reasons:',
     ' * You can format things',
@@ -92,12 +97,13 @@ test('inline asterisk', function (assert) {
     'FIN!'
   ].join('\n')
 
-  assert.plan(1)
   assert.equals(html(), expected)
+  assert.end()
 })
 
-test('advanced usage', function (assert) {
-  function json () {/*
+test('advanced usage', (assert) => {
+  function json () {
+    /*
       {
         "data": "test",
         "things": ["a","b","c"]
@@ -115,6 +121,6 @@ test('advanced usage', function (assert) {
     things: ['a', 'b', 'c']
   }
 
-  assert.plan(1)
   assert.deepEquals(json(), expected)
+  assert.end()
 })
