@@ -1,5 +1,5 @@
 import test from 'tape'
-import fnStringify from './'
+import fnStringify from './src'
 
 test('simple test', (assert) => {
   const html = fnStringify(() => {
